@@ -1,5 +1,6 @@
 ﻿//  Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
 //  и возвращает значение этого элемента или же указание, что такого элемента нет.
+using System;
 void PrintArray(int[,] matr) // Метод распечатки массива
 {
     for (int i = 0; i < matr.GetLength(0); i++) // распечатать массив
@@ -33,20 +34,22 @@ int n = rnd.Next (1,10);
 int[,] matrix = new int[m, n];
 FillArraay(matrix);
 
+Console.Clear();
 Console.Write("Введите строку искомого эл-та: ");
 int mserch = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите столбец искомого эл-та: ");
 int nserch = Convert.ToInt32(Console.ReadLine());
 
-
-if (mserch >= matrix.GetLength(0) &&  mserch>= matrix.GetLength(1))
-    {
-    Console.WriteLine("\nЭлемента с заданной позицией не существует");
-    }
-else 
-    {
-    Console.WriteLine("\nЧисло с заданной позицией - " + matrix[mserch,nserch]);
-    }
 Console.Write("\nСлучайный масиив:\n");
 PrintArray(matrix);
 Console.WriteLine();
+
+if (mserch >= matrix.GetLength(0) &&  nserch>= matrix.GetLength(1) ||  mserch >= matrix.GetLength(0) || nserch >= matrix.GetLength(1))
+    {
+    Console.WriteLine("\nЭлемента c позицией " + "["+ mserch+ ", "+ nserch+"]  "+ "не существует");
+    }
+
+else 
+    {
+    Console.WriteLine("\nЭлемент с позицией " + "["+ mserch+ ", "+ nserch+"] - "+matrix[mserch,nserch]);
+    }
