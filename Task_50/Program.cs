@@ -49,3 +49,4 @@ else
     }
 Console.Write("\nСлучайный масиив:\n");
 PrintArray(matrix);
+Console.WriteLine();
